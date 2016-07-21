@@ -55,24 +55,28 @@ block content
       // get status and id for items to be removed
       checkList = document.querySelectorAll('[id*="_checkbox"]');
       console.log(checkList);
-      removeList = {};
+      var removeList = [];
       
       // get anything that needs to be removed
       for (i = 0; i < checkList.length; i++){
         if (checkList[i].checked) {
-          removeList[checkList[i].id] = checkList[i].checked;
-          console.log(`${checkList[i].id} ${checkList[i].checked}`);
+          // remove the _checkbox from the id
+          var cleanStr = checkList[i].id.substring(0, checkList[i].id.indexOf('_'));
+          removeList.push(cleanStr);
+          //- removeList[cleanStr] = checkList[i].checked;
+          //- console.log(`${cleanStr} ${checkList[i].checked}`);
         }
       }
+      console.log(removeList);
       // stringify for form submission
-      var stringForm = JSON.stringify(removeList);
+      //- var stringForm = JSON.stringify(removeList);
       console.log('====');
       console.log(removeList);
-      console.log(stringForm);
       var hiddenField = document.createElement("input");
       hiddenField.setAttribute("type", "hidden");
       hiddenField.setAttribute("name", "removeList");
-      hiddenField.setAttribute("value", stringForm);
+      //- hiddenField.setAttribute("value", stringForm);
+      hiddenField.setAttribute("value", removeList);
       form.appendChild(hiddenField);
       
       hiddenField = document.createElement("input");

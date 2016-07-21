@@ -50,7 +50,16 @@ function updateBead(req, res) {
 }
 
 function removeBeads(req, res) {
-  console.log(req.body.removeList);
+  var removeList = req.body.removeList.split(',');
+  console.log(removeList);
+  for (i in removeList) {
+    id = removeList[i];
+    console.log(id);
+    // Bead.remove({id: id});
+    Bead.find({id: id}).remove().exec();
+  }
+  res.redirect('/create');
+
 }
 
 /* GET users listing. */
