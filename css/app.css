@@ -1,0 +1,16 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lobster', cursive;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.my-top {
+  background-color: blue;
+  color: white;
+}
+
+.row {
+  padding: 1em;
+}
