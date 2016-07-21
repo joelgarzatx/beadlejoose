@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 var session = require('express-session')
 
 var routes = require('./routes/index');
-var checkIn = require('./routes/create');
-var admin = require('./routes/jfjf');
+var create = require('./routes/create');
+var inventory = require('./routes/inventory');
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/necklace');
@@ -37,8 +37,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/create', checkIn);
-app.use('/jfjf', admin);
+app.use('/create', create);
+app.use('/inventory', inventory);
 
 // function(req, res, next){
 //  console.log('special area unlocked');

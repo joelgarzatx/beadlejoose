@@ -16,6 +16,9 @@ tr, td {
 .small {
   width: 20px;
 }
+.icon {
+  width: 15px;
+}
 
 table {
   border-collapse: collapse;
