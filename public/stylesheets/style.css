@@ -23,3 +23,12 @@ tr, td {
 table {
   border-collapse: collapse;
 }
+
+h6 {
+  opacity:1;
+  transition:opacity 300ms;
+}
+
+h6.hide {
+  opacity:0;
+}
